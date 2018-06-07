@@ -2,46 +2,52 @@
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
+const table = '#pixelCanvas';
+// Set target ID to variable.
 
-function makeGrid() {
+const row = '<tr></tr>';
+// Set row elements to variable.
 
+const cell = '<td></td>';
+// Set cell elements to variable.
 
-(function() {
-  'use strict';
+$('#sizePicker').submit(function makeGrid (event, height, width) {
+// When the sizePicker form is submitted, run the makeGrid function.
+// The makeGrid function takes the parameters event, height, and width.
 
-  // Globale Variablen
-  const $colorPicker = document.getElementById("colorPicker");
-  const $sizePicker = document.getElementById("sizePicker");
-  const $table = document.getElementById("pixel_canvas");
+  event.preventDefault();
+  // Prevent auto-refresh from deleting grid as it's displayed.
 
-  // listener
-  $sizePicker.addEventListener('submit', function() {
-    event.preventDefault();
+  $(table).empty();
+  // Clear the grid on submit, if there is one.
 
-    // Grid Daten ziehen
-    let width = document.getElementById("input_width").value;
-    let height = document.getElementById("input_height").value;
-    makeGrid(width, height);
-  })
+  height = $('#inputHeight').val();
+  // Fetch the input value of height.
 
-  // Grid erstellen
-  function makeGrid(width, height) {
-    $table.innerHTML = '';
-    for (let row = 0; row < height; row++) {
-      let newRow = $table.insertRow();
-        for (let cell= 0; cell < width; cell++ ) {
-          let newCell = newRow.insertCell();
-          newCell.onclick = changeColor;
-        }
+  width = $('#inputWidth').val();
+  // Fetch the input value of width.
+
+  for (let m = 0; m < height; m++) {
+  // Outer loop defined by height.
+
+    $(table).append(row);
+    
+
+    for (let n = 0; n < width; n++) {
+    // Inner loop defined by width.
+
+      $('tr').last().append(cell);
+      // Append n cells to the last row m times.
     }
   }
+});
 
-  // Farben wechseln
-  function changeColor() {
-    this.style.background = $colorPicker.value;
-  }
+$(table).on('click', 'td', function paintGrid () {
 
-})();
 
-}
+  let color = $('#colorPicker').val();
+  
 
+  $(this).css('background-color', color);
+  // Set this cell's background to the input color.
+});
