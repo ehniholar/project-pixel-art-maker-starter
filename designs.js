@@ -1,5 +1,6 @@
-// Select color input
-// Select size input
+//hello Everyone! this is my javascript codes lesson from udacity alc scholarship.
+//please kindly follow the codes to your understanding
+//thumbs up if you support
 
 // When size is submitted by the user, call makeGrid()
 
@@ -13,14 +14,13 @@ const cell = '<td></td>';
 // Set cell elements to variable.
 
 $('#sizePicker').submit(function makeGrid (event, height, width) {
-// When the sizePicker form is submitted, run the makeGrid function.
 // The makeGrid function takes the parameters event, height, and width.
 
   event.preventDefault();
   // Prevent auto-refresh from deleting grid as it's displayed.
 
   $(table).empty();
-  // Clear the grid on submit, if there is one.
+  // Clear the grid on submit, or if there is one.
 
   height = $('#inputHeight').val();
   // Fetch the input value of height.
@@ -52,3 +52,4 @@ $(table).on('click', 'td', function paintGrid () {
 });
 
 }
+//thank you for reading for reading my codes.
