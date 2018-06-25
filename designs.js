@@ -32,9 +32,10 @@ $('#sizePicker').submit(function makeGrid (event, height, width) {
   // Outer loop defined by height.
 
     $(table).append(row);
-    // Append a row to the table m times.
+    
 
     for (let n = 0; n < width; n++) {
+      // Append a row to the table m times.
 
       $('tr').last().append(cell);
       // Append n cells to the last row m times.
