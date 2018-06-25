@@ -1,9 +1,14 @@
 body {
     text-align: center;
+    background-color: #fff; 
+    background-image: 
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
 }
 
 h1 {
-    font-family: Monoton;
+    font-family: cursive;
     font-size: 70px;
     margin: 0.2em;
 }
@@ -16,15 +21,15 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
-table,
-tr,
-td {
-    border: 1px solid black;
+table, tr, td {
+    border: 1px solid blue;
+    font-family: cursive;
 }
 
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    font-family: cursive;
 }
 
 tr {
